@@ -2,20 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WeaponBoxStates
+public enum TurnPhase
 {
-	GoingUp, AtTopPoisition, GoingDown, None
-}
-public enum BigRoundTextState
-{
-	FadingIn, FadingOut, WaitingToFadeOut ,None
-}
-public enum Language
-{
-	ESP,ENG
+	InicioTurno, Actuando, FinalDeTurno, None
 }
 
-public enum WeaponType
+public enum CardState
 {
-	Normal, Shotgun, MisileLauncher
+	EnMano, Seleccionada, None
 }

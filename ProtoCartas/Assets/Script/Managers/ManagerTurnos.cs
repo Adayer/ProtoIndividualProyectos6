@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManagerTurnos : MonoBehaviour
+public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private TurnPhase m_currentTurnPhase = TurnPhase.None;
 
-    // Update is called once per frame
+
     void Update()
     {
-        
-    }
+		switch (m_currentTurnPhase)
+		{
+			case TurnPhase.InicioTurno:
+				break;
+			case TurnPhase.Actuando:
+				break;
+			case TurnPhase.FinalDeTurno:
+				break;
+			case TurnPhase.None:
+				break;
+			default:
+				break;
+		}
+	}
 }
