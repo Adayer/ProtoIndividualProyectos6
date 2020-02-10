@@ -6,8 +6,6 @@ public class PositionInHandManager : TemporalSingleton<PositionInHandManager>
 {
 	[SerializeField] private HandPositionData[] m_handPositions = new HandPositionData[0];
 	
-
-	
 	public void PlaceCardInHand(Transform cardToHand)
 	{
 		for (int i = 0; i < m_handPositions.Length; i++)
