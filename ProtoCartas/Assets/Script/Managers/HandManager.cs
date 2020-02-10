@@ -35,8 +35,6 @@ public class HandManager : TemporalSingleton<HandManager>
 	{
 		m_deckSizeTxt.text = m_deckOfCards.Count.ToString();
 		m_discardPileSizeTxt.text = m_discardPile.Count.ToString();
-
-		
 	}
 
 

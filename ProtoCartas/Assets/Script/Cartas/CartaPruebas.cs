@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CartaPruebas : CartaBase
 {
-
 	public override void Effect()
 	{
 	}
