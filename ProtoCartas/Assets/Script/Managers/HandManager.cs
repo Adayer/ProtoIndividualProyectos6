@@ -14,6 +14,7 @@ public class HandManager : TemporalSingleton<HandManager>
 	[SerializeField] private int m_charNotInFrontCardsDrawnAtTheStartOfCombat = 0;
 
 	[SerializeField] private int m_maxNumberOfCardsInHand = 0;
+	[SerializeField] private int m_charNotFrontMaxNumberOfCardsInHand = 0;
 	private int m_currentNumberOfCardsInHand = 0;
 
 
@@ -23,6 +24,7 @@ public class HandManager : TemporalSingleton<HandManager>
 	public bool HandIsFull { get => m_handIsFull; set => m_handIsFull = value; }
 	public int CurrentNumberOfCardsInHand { get => m_currentNumberOfCardsInHand; set => m_currentNumberOfCardsInHand = value; }
 	public CharacterDecksData[] CharDecks { get => m_charDecks; set => m_charDecks = value; }
+	public int CurrentCharIndex { get => m_currentCharIndex; set => m_currentCharIndex = value; }
 
 	private void Start()
 	{
@@ -110,10 +112,8 @@ public class HandManager : TemporalSingleton<HandManager>
 	{
 		if(m_charDecks[m_currentCharIndex].DeckOfCards.Count > 0)
 		{
-			if (m_currentNumberOfCardsInHand < m_maxNumberOfCardsInHand)
-			{
-				m_currentNumberOfCardsInHand = m_currentNumberOfCardsInHand + 1;
-
+			if (m_charDecks[m_currentCharIndex].Hand.Count < m_maxNumberOfCardsInHand)
+			{	
 				int index = Random.Range(0, m_charDecks[m_currentCharIndex].DeckOfCards.Count);
 				GameObject cardDrawn = m_charDecks[m_currentCharIndex].DeckOfCards[index];
 
@@ -145,18 +145,14 @@ public class HandManager : TemporalSingleton<HandManager>
 		if (m_charDecks[charIndex].DeckOfCards.Count > 0)
 		{
 			//Aqui esta el problema tengo que ver si el numero de cartas en la mano es el del personaje que esta robando no del personaje que esta delante.
-			if (m_currentNumberOfCardsInHand < m_maxNumberOfCardsInHand)
+			if (m_charDecks[charIndex].Hand.Count < m_charNotFrontMaxNumberOfCardsInHand)
 			{
-				m_currentNumberOfCardsInHand = m_currentNumberOfCardsInHand + 1;
-
 				int index = Random.Range(0, m_charDecks[charIndex].DeckOfCards.Count);
 				GameObject cardDrawn = m_charDecks[charIndex].DeckOfCards[index];
 
 				m_charDecks[charIndex].DeckOfCards.RemoveAt(index);
 
 				m_charDecks[charIndex].Hand.Add(cardDrawn);
-
-				print(cardDrawn.name);
 
 				if (m_charDecks[charIndex].DeckOfCards.Count == 0)
 				{

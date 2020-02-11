@@ -1448,6 +1448,7 @@ MonoBehaviour:
   m_cardsDrawnAtTheStartOfCombat: 3
   m_charNotInFrontCardsDrawnAtTheStartOfCombat: 2
   m_maxNumberOfCardsInHand: 4
+  m_charNotFrontMaxNumberOfCardsInHand: 3
   m_deckSizeTxt: {fileID: 1671368366}
   m_discardPileSizeTxt: {fileID: 1005688305}
 --- !u!4 &1570292969

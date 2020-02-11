@@ -62,9 +62,9 @@ public class PositionInHandManager : TemporalSingleton<PositionInHandManager>
 			}
 		}
 
-		for (int j = 0; j < HandManager.Instance.CharDecks[HandManager.Instance.CurrentNumberOfCardsInHand].Hand.Count; j++)
+		for (int j = 0; j < HandManager.Instance.CharDecks[HandManager.Instance.CurrentCharIndex].Hand.Count; j++)
 		{
-			m_handPositions[j].Card = HandManager.Instance.CharDecks[HandManager.Instance.CurrentNumberOfCardsInHand].Hand[j].transform;
+			m_handPositions[j].Card = HandManager.Instance.CharDecks[HandManager.Instance.CurrentCharIndex].Hand[j].transform;
 			m_handPositions[j].Card.gameObject.SetActive(true);
 			m_handPositions[j].Card.position = m_handPositions[j].HandPosition.position;
 			m_handPositions[j].Card.GetComponent<CartaBase>().CurrentHandPosition = m_handPositions[j];
