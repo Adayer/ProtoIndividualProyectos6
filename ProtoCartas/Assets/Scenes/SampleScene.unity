@@ -1446,6 +1446,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5776deb397221f4a9edda407d82f403, type: 2}
   - {fileID: 11400000, guid: 9814c99093d98c84faf5cc234c2e4a12, type: 2}
   m_cardsDrawnAtTheStartOfCombat: 3
+  m_charNotInFrontCardsDrawnAtTheStartOfCombat: 2
   m_maxNumberOfCardsInHand: 4
   m_deckSizeTxt: {fileID: 1671368366}
   m_discardPileSizeTxt: {fileID: 1005688305}
