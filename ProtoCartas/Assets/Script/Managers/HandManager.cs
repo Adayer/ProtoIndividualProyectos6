@@ -13,6 +13,9 @@ public class HandManager : TemporalSingleton<HandManager>
 	[SerializeField] private int m_cardsDrawnAtTheStartOfCombat = 0;
 	[SerializeField] private int m_charNotInFrontCardsDrawnAtTheStartOfCombat = 0;
 
+	[SerializeField] private int m_cardsDrawAtTheStartOfTurn = 0;
+	[SerializeField] private int m_charNotInFrontCardsDrawAtTheStartOfTurn = 0;
+
 	[SerializeField] private int m_maxNumberOfCardsInHand = 0;
 	[SerializeField] private int m_charNotFrontMaxNumberOfCardsInHand = 0;
 	private int m_currentNumberOfCardsInHand = 0;
@@ -28,7 +31,6 @@ public class HandManager : TemporalSingleton<HandManager>
 
 	private void Start()
 	{
-
 		for (int i = 0; i < m_charDecks.Length; i++)
 		{
 			m_charDecks[i].DiscardPile = new List<GameObject>(0);
@@ -46,65 +48,51 @@ public class HandManager : TemporalSingleton<HandManager>
 			}
 		}
 
-
-		for (int i = 0; i < m_cardsDrawnAtTheStartOfCombat; i++)
+		for (int i = 0; i < m_charDecks.Length; i++)
 		{
-			DrawCard();
+			if (i != m_currentCharIndex)
+			{
+				for (int j = 0; j < m_charNotInFrontCardsDrawnAtTheStartOfCombat; j++)
+				{
+					DrawCardNotFront(i);
+				}
+			}
+			else
+			{
+				for (int j = 0; j < m_cardsDrawnAtTheStartOfCombat; j++)
+				{
+					DrawCard();
+				}
+
+			}
 		}
-
-		print(m_currentCharIndex);
-
-		switch (m_currentCharIndex)
-		{
-			case 0:
-				{
-					for (int i = 0; i < m_charNotInFrontCardsDrawnAtTheStartOfCombat; i++)
-					{
-						DrawCardNotFront(1);
-					}
-
-					for (int i = 0; i < m_charNotInFrontCardsDrawnAtTheStartOfCombat; i++)
-					{
-						DrawCardNotFront(2);
-					}
-				}
-				break;
-			case 1:
-				{
-					for (int i = 0; i < m_charNotInFrontCardsDrawnAtTheStartOfCombat; i++)
-					{
-						DrawCardNotFront(0);
-					}
-
-					for (int i = 0; i < m_charNotInFrontCardsDrawnAtTheStartOfCombat; i++)
-					{
-						DrawCardNotFront(2);
-					}
-				}
-				break;
-			case 2:
-				{
-					for (int i = 0; i < m_charNotInFrontCardsDrawnAtTheStartOfCombat; i++)
-					{
-						DrawCardNotFront(0);
-					}
-
-					for (int i = 0; i < m_charNotInFrontCardsDrawnAtTheStartOfCombat; i++)
-					{
-						DrawCardNotFront(1);
-					}
-				}
-				break;
-			default:
-				break;
-		}
-
 	}
 
 	private void Update()
 	{
 		m_deckSizeTxt.text = m_charDecks[m_currentCharIndex].DeckOfCards.Count.ToString();
 		m_discardPileSizeTxt.text = m_charDecks[m_currentCharIndex].DiscardPile.Count.ToString();
+	}
+
+	public void StartTurnDraw()
+	{
+		for (int i = 0; i < m_charDecks.Length; i++)
+		{
+			if (i != m_currentCharIndex)
+			{
+				for (int j = 0; j < m_charNotInFrontCardsDrawAtTheStartOfTurn; j++)
+				{
+					DrawCardNotFront(i);
+				}
+			}
+			else
+			{
+				for (int j = 0; j < m_cardsDrawAtTheStartOfTurn; j++)
+				{
+					DrawCard();
+				}
+			}
+		}
 	}
 
 
@@ -131,7 +119,7 @@ public class HandManager : TemporalSingleton<HandManager>
 			}
 			else
 			{
-				print("No se puede robar más");
+				
 			}
 		}
 		else
@@ -161,7 +149,7 @@ public class HandManager : TemporalSingleton<HandManager>
 			}
 			else
 			{
-				print("No se puede robar más");
+				
 			}
 		}
 		else
@@ -198,12 +186,12 @@ public class HandManager : TemporalSingleton<HandManager>
 			}
 			else
 			{
-				print("Todavía hay cartas");
+
 			}
 		}
 		else
 		{
-			print("No hay más cartas");
+			
 		}
 	}
 	public void ResetDrawPileNotFront(int index)
@@ -221,38 +209,44 @@ public class HandManager : TemporalSingleton<HandManager>
 			}
 			else
 			{
-				print("Todavía hay cartas");
+				
 			}
 		}
 		else
 		{
-			print("No hay más cartas");
+			
 		}
 	}
 
 
 	public void ChangeToLeftChar()
 	{
-		if(m_currentCharIndex == 0)
+		if(ManagerTurnos.Instance.CurrentTurnPhase == TurnPhase.ActuandoPlayer)
 		{
-			m_currentCharIndex = m_charDecks.Length - 1;
+			if (m_currentCharIndex == 0)
+			{
+				m_currentCharIndex = m_charDecks.Length - 1;
+			}
+			else
+			{
+				m_currentCharIndex = m_currentCharIndex - 1;
+			}
+			PositionInHandManager.Instance.ChangeCharHand();
 		}
-		else
-		{
-			m_currentCharIndex = m_currentCharIndex - 1;
-		}
-		PositionInHandManager.Instance.ChangeCharHand();
 	}
 	public void ChangeToRightChar()
 	{
-		if(m_currentCharIndex >= m_charDecks.Length - 1)
+		if (ManagerTurnos.Instance.CurrentTurnPhase == TurnPhase.ActuandoPlayer)
 		{
-			m_currentCharIndex = 0;
-		}
-		else
-		{
-			m_currentCharIndex = m_currentCharIndex + 1;
-		}
-		PositionInHandManager.Instance.ChangeCharHand();
+			if (m_currentCharIndex >= m_charDecks.Length - 1)
+			{
+				m_currentCharIndex = 0;
+			}
+			else
+			{
+				m_currentCharIndex = m_currentCharIndex + 1;
+			}
+			PositionInHandManager.Instance.ChangeCharHand();
+		}	
 	}
 }

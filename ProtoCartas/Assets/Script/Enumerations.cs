@@ -4,10 +4,15 @@ using UnityEngine;
 
 public enum TurnPhase
 {
-	InicioTurno, Actuando, FinalDeTurno, None
+	InicioTurnoPlayer, ActuandoPlayer, FinalDeTurnoPlayer, InicioTurnoEnemy, ActuandoEnemy, FinalDeTurnoEnemy, None
 }
 
 public enum CardState
 {
 	EnMano, Seleccionada, None
+}
+
+public enum TypeOfCharAbility
+{
+	StartOfTurn, EndOfTurn, None 
 }
