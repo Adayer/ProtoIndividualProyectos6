@@ -10,11 +10,7 @@ public class PositionInHandManager : TemporalSingleton<PositionInHandManager>
 	{
 		for (int i = 0; i < m_handPositions.Length; i++)
 		{
-			if(cardToHand.GetComponent<CartaBase>().CurrentHandPosition != null)
-			{
-				cardToHand.position = cardToHand.GetComponent<CartaBase>().CurrentHandPosition.HandPosition.position;
-				break;
-			}
+			
 			if (!m_handPositions[i].IsBeingUsed)
 			{
 				m_handPositions[i].IsBeingUsed = true;
@@ -23,6 +19,14 @@ public class PositionInHandManager : TemporalSingleton<PositionInHandManager>
 				m_handPositions[i].Card = cardToHand;
 				break;
 			}
+		}
+	}
+
+	public void ReturnCardToHand(Transform cardToHand)
+	{
+		if (cardToHand.GetComponent<CartaBase>().CurrentHandPosition != null)
+		{
+			cardToHand.position = cardToHand.GetComponent<CartaBase>().CurrentHandPosition.HandPosition.position;
 		}
 	}
 

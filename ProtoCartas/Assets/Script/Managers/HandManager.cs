@@ -164,7 +164,7 @@ public class HandManager : TemporalSingleton<HandManager>
 		discaredCard.SetActive(false);
 
 		m_charDecks[m_currentCharIndex].DiscardPile.Add(discaredCard);
-		m_charDecks[m_currentCharIndex].Hand.Remove(discaredCard);
+		m_charDecks[m_currentCharIndex].Hand.Remove(discaredCard);           
 
 		m_currentNumberOfCardsInHand = m_currentNumberOfCardsInHand - 1;
 
@@ -202,7 +202,7 @@ public class HandManager : TemporalSingleton<HandManager>
 			{
 				for (int i = 0; i < m_charDecks[index].DiscardPile.Count; i++)
 				{
-					m_charDecks[m_currentCharIndex].DeckOfCards.Add(m_charDecks[index].DiscardPile[i]);
+					m_charDecks[index].DeckOfCards.Add(m_charDecks[index].DiscardPile[i]);
 				}
 
 				m_charDecks[index].DiscardPile = new List<GameObject>(0);
@@ -232,6 +232,7 @@ public class HandManager : TemporalSingleton<HandManager>
 				m_currentCharIndex = m_currentCharIndex - 1;
 			}
 			PositionInHandManager.Instance.ChangeCharHand();
+			CharacterManager.Instance.SwitchChar();
 		}
 	}
 	public void ChangeToRightChar()
@@ -247,6 +248,41 @@ public class HandManager : TemporalSingleton<HandManager>
 				m_currentCharIndex = m_currentCharIndex + 1;
 			}
 			PositionInHandManager.Instance.ChangeCharHand();
+			CharacterManager.Instance.SwitchChar();
 		}	
 	}
+
+	public void CheckDiscardAtEndOfTurn()
+	{
+		for (int i = 0; i < m_charDecks.Length; i++)
+		{
+			if(i == m_currentCharIndex)
+			{
+				while (m_charDecks[i].Hand.Count > m_maxNumberOfCardsInHand)
+				{
+					DiscardCard(m_charDecks[i].Hand[0]);
+					print("Hi");
+				}
+			}
+			else
+			{
+				while (m_charDecks[i].Hand.Count > m_charNotFrontMaxNumberOfCardsInHand)
+				{
+					DiscardAtTheEndOfTurn(m_charDecks[i].Hand[0], i);
+				}
+			}
+		}
+	}
+
+	void DiscardAtTheEndOfTurn(GameObject discaredCard, int charIndex)
+	{
+		discaredCard.transform.Translate(Vector2.up * 1000);
+		discaredCard.SetActive(false);
+
+		m_charDecks[charIndex].DiscardPile.Add(discaredCard);
+		m_charDecks[charIndex].Hand.Remove(discaredCard);
+
+		ResetDrawPileNotFront(charIndex );
+	}
+
 }

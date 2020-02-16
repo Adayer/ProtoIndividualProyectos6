@@ -57,6 +57,8 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 					CharacterManager.Instance.DealEndOfTurnEffects();
 
 					print("Falta el descarte de cartas extra");
+
+					HandManager.Instance.CheckDiscardAtEndOfTurn();
 					//Descartar cartas extra
 					m_currentTurnPhase = TurnPhase.InicioTurnoEnemy;
 				}

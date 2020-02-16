@@ -34,7 +34,6 @@ public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 					}
 				}
 			}
-
 			else
 			{
 				if (Input.GetMouseButtonDown(0))
@@ -62,7 +61,7 @@ public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 						else if (hit.collider.gameObject.layer == CardPlacementeLayers.HandLayer)
 						{
 							m_selectedCard.CurrentCardState = CardState.EnMano;
-							PositionInHandManager.Instance.PlaceCardInHand(m_selectedCard.transform);
+							PositionInHandManager.Instance.ReturnCardToHand(m_selectedCard.transform);
 							m_selectedCard = null;
 							m_hasCardSelected = false;
 						}
