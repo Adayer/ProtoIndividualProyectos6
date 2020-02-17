@@ -20,9 +20,13 @@ public class HandManager : TemporalSingleton<HandManager>
 	[SerializeField] private int m_charNotFrontMaxNumberOfCardsInHand = 0;
 	private int m_currentNumberOfCardsInHand = 0;
 
+	[SerializeField] private int m_maxMana = 0;
+	private int m_currentMana = 0;
 
 	[SerializeField] private TextMeshProUGUI m_deckSizeTxt = null;
 	[SerializeField] private TextMeshProUGUI m_discardPileSizeTxt = null;
+	[SerializeField] private TextMeshProUGUI m_currentManaTxt = null;
+	[SerializeField] private TextMeshProUGUI m_maxManaTxt = null;
 
 	public bool HandIsFull { get => m_handIsFull; set => m_handIsFull = value; }
 	public int CurrentNumberOfCardsInHand { get => m_currentNumberOfCardsInHand; set => m_currentNumberOfCardsInHand = value; }
@@ -31,6 +35,12 @@ public class HandManager : TemporalSingleton<HandManager>
 
 	private void Start()
 	{
+
+		m_currentMana = m_maxMana;
+
+		m_currentManaTxt.text = m_currentMana.ToString();
+		m_maxManaTxt.text = m_maxMana.ToString();
+
 		for (int i = 0; i < m_charDecks.Length; i++)
 		{
 			m_charDecks[i].DiscardPile = new List<GameObject>(0);
@@ -285,4 +295,29 @@ public class HandManager : TemporalSingleton<HandManager>
 		ResetDrawPileNotFront(charIndex );
 	}
 
+
+	public bool CheckMana(int manaCost)
+	{
+		bool hasMana = false;
+
+		if(manaCost <= m_currentMana)
+		{
+			hasMana = true;
+		}
+
+		return hasMana;
+	}
+
+
+	public void SpendMana(int manaSpent)
+	{
+		m_currentMana = m_currentMana - manaSpent;
+		m_currentManaTxt.text = m_currentMana.ToString();
+	}
+
+	public void ResetMana()
+	{
+		m_currentMana = m_maxMana;
+		m_currentManaTxt.text = m_currentMana.ToString();
+	}
 }

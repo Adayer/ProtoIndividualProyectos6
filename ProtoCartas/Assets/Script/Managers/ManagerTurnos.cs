@@ -33,7 +33,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 						HandManager.Instance.StartTurnDraw();
 					}
 					CharacterManager.Instance.DealStartOfTurnEffects();
-
+					HandManager.Instance.ResetMana();
 					m_timeBar.transform.parent.gameObject.SetActive(true);
 				}
 				break;

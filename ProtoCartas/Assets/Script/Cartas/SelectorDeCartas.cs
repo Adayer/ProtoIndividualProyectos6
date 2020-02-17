@@ -27,9 +27,12 @@ public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 					{
 						if (hit.collider.GetComponent<CartaBase>() != null)
 						{
-							m_selectedCard = hit.collider.GetComponent<CartaBase>();
-							m_selectedCard.CurrentCardState = CardState.Seleccionada;
-							m_hasCardSelected = true;
+							if (HandManager.Instance.CheckMana(hit.collider.GetComponent<CartaBase>().ManaCost))
+							{
+								m_selectedCard = hit.collider.GetComponent<CartaBase>();
+								m_selectedCard.CurrentCardState = CardState.Seleccionada;
+								m_hasCardSelected = true;
+							}
 						}
 					}
 				}
@@ -45,6 +48,9 @@ public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 						if (hit.collider.gameObject.layer == CardPlacementeLayers.TableLayer)
 						{
 							m_selectedCard.Effect();
+
+							HandManager.Instance.SpendMana(m_selectedCard.ManaCost);
+
 							if (m_selectedCard.CurrentHandPosition != null)
 							{
 								m_selectedCard.CurrentHandPosition.IsBeingUsed = false;

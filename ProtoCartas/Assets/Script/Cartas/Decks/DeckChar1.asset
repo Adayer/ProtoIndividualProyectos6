@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DeckChar1
   m_EditorClassIdentifier: 
   m_deckOfCardsSO:
-  - {fileID: 1626991784442480100, guid: f039d9955df708d4a9b28f6e4a7f1fe8, type: 3}
-  - {fileID: 1626991784442480100, guid: 0f8b72114bfb8444595962209f90cb66, type: 3}
-  - {fileID: 1626991784442480100, guid: dfc2b969046e0154da838c742d07e813, type: 3}
-  - {fileID: 1626991784442480100, guid: 6801998313d35944aae31b57e33b61da, type: 3}
-  - {fileID: 1626991784442480100, guid: cdcd90ed0d863de4ba327442d4e5ed33, type: 3}
-  - {fileID: 1626991784442480100, guid: cf34e5509908d24499ad3548264a91a5, type: 3}
+  - {fileID: 3676059894044845223, guid: e86fb7b2db3eb8948a95a2cba4ce3027, type: 3}
+  - {fileID: 3676059894044845223, guid: e86fb7b2db3eb8948a95a2cba4ce3027, type: 3}
+  - {fileID: 3676059894044845223, guid: e86fb7b2db3eb8948a95a2cba4ce3027, type: 3}
+  - {fileID: 3676059894044845223, guid: e86fb7b2db3eb8948a95a2cba4ce3027, type: 3}
+  - {fileID: 118871535502422309, guid: 4670897b03b6e1b489e350caa194c681, type: 3}
+  - {fileID: 118871535502422309, guid: 4670897b03b6e1b489e350caa194c681, type: 3}
