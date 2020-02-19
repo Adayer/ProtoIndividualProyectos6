@@ -17,7 +17,7 @@ public class VidaBase : MonoBehaviour
 	{
 		m_currentLife = m_maxLife;
 		m_lifeTxt.text = m_currentLife.ToString();
-		m_lifeImg.fillAmount = m_currentLife / m_maxLife;
+		m_lifeImg.fillAmount = (float)m_currentLife / (float)m_maxLife;
 
 	}
 
@@ -31,6 +31,6 @@ public class VidaBase : MonoBehaviour
 			m_currentLife = 0;
 		}
 		m_lifeTxt.text = m_currentLife.ToString();
-		m_lifeImg.fillAmount = m_currentLife / m_maxLife;
+		m_lifeImg.fillAmount = (float)m_currentLife / (float)m_maxLife;
 	}
 }

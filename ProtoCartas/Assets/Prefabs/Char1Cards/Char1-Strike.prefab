@@ -72,40 +72,10 @@ PrefabInstance:
       propertyPath: m_manaCost
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+    - target: {fileID: 5855875608946670290, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
-        type: 3}
-      propertyPath: m_text
-      value: Deal 6 Damage to the opponent.
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
-        type: 3}
-      propertyPath: m_isTextTruncated
-      value: 0
+      propertyPath: m_damage
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 976884159432851601, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
         type: 3}
@@ -166,6 +136,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_text
+      value: Deal 6 Damage to the opponent.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_isTextTruncated
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f039d9955df708d4a9b28f6e4a7f1fe8, type: 3}
