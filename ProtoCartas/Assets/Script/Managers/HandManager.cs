@@ -262,6 +262,34 @@ public class HandManager : TemporalSingleton<HandManager>
 		}	
 	}
 
+	public void ChangeToLeftCharByEnemy()
+	{
+		if (m_currentCharIndex == 0)
+		{
+			m_currentCharIndex = m_charDecks.Length - 1;
+		}
+		else
+		{
+			m_currentCharIndex = m_currentCharIndex - 1;
+		}
+		PositionInHandManager.Instance.ChangeCharHand();
+		CharacterManager.Instance.SwitchChar();
+	}
+	public void ChangeToRightCharByEnemy()
+	{
+		if (m_currentCharIndex >= m_charDecks.Length - 1)
+		{
+			m_currentCharIndex = 0;
+		}
+		else
+		{
+			m_currentCharIndex = m_currentCharIndex + 1;
+		}
+		PositionInHandManager.Instance.ChangeCharHand();
+		CharacterManager.Instance.SwitchChar();
+
+	}
+
 	public void CheckDiscardAtEndOfTurn()
 	{
 		for (int i = 0; i < m_charDecks.Length; i++)

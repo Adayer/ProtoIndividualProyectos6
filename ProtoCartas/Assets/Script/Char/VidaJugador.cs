@@ -14,6 +14,6 @@ public class VidaJugador : VidaBase
 		}
 
 		m_lifeTxt.text = m_currentLife.ToString();
-		m_lifeImg.fillAmount = m_currentLife / m_maxLife;
+		m_lifeImg.fillAmount = (float)m_currentLife / (float)m_maxLife;
 	}
 }

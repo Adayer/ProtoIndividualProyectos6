@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackFront : MonoBehaviour
+public class EnemyAttackFront : EnemyAbility
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private int m_damage = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public override void ActivateAbility()
+	{
+		CharacterManager.Instance.Characters[HandManager.Instance.CurrentCharIndex].GetComponent<VidaBase>().DealDamage(m_damage);
+	}
 }

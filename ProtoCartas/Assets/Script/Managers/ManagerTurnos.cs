@@ -72,8 +72,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 				break;
 			case TurnPhase.ActuandoEnemy:
 				{
-					print("El enemigo esta actuando");
-					print("No esta implementado");
+					EnemyManager.Instance.EnemyAct();
 					m_currentTurnPhase = TurnPhase.FinalDeTurnoEnemy;
 				}
 				break;

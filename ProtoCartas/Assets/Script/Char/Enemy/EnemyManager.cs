@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class EnemyManager : TemporalSingleton<EnemyManager>
 {
+	[SerializeField] private EnemyBehaviour m_enemy = null;
+	
+	public EnemyBehaviour Enemy { get => m_enemy; set => m_enemy = value; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public void EnemyAct()
+	{
+		m_enemy.Activate();
+	}
 }

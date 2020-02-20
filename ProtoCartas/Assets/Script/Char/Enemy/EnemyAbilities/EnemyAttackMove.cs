@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackMove : MonoBehaviour
+public class EnemyAttackMove : EnemyAbility
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private int m_damage = 0;
+	[SerializeField] private bool m_movesRight = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public override void ActivateAbility()
+	{
+		CharacterManager.Instance.Characters[HandManager.Instance.CurrentCharIndex].GetComponent<VidaBase>().DealDamage(m_damage);
+
+		print("Hi biiiiiiiiiiiiiiiiiiiiiiiiitch");
+
+		if (m_movesRight)
+		{
+			HandManager.Instance.ChangeToRightCharByEnemy();
+		}
+		else
+		{
+			HandManager.Instance.ChangeToLeftCharByEnemy();
+		}
+
+		CharacterManager.Instance.Characters[HandManager.Instance.CurrentCharIndex].GetComponent<VidaBase>().DealDamage(m_damage);
+	}
 }
