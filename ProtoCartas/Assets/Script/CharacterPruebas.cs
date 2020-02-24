@@ -8,11 +8,11 @@ public class CharacterPruebas : CharacterComponent
 	{
 		if (isFrontCharacter)
 		{
-			print("THIS IS MY FINAL ABILITY");
+			
 		}
 		else
 		{
-			print("Just you wait for my final form");
+			
 		}
 		
 		//Ability needs to be implemented

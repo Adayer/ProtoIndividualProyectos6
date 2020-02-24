@@ -22,8 +22,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 		{
 			case TurnPhase.InicioTurnoPlayer:
 				{
-					print("Inicio turno player");
-					print("No esta implementado");
+					print("Habilidades en el script CharacterComponent");
 					//Deal effects to players
 					m_currentTurnPhase = TurnPhase.ActuandoPlayer;
 					m_currentTurnDuration = m_maxTurnDuration;
@@ -32,7 +31,10 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 					{
 						HandManager.Instance.StartTurnDraw();
 					}
+
 					CharacterManager.Instance.DealStartOfTurnEffects();
+					CharacterManager.Instance.BeginingOfTurnStatus();
+					
 					HandManager.Instance.ResetMana();
 					m_timeBar.transform.parent.gameObject.SetActive(true);
 				}
@@ -55,8 +57,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 					m_timeBar.transform.parent.gameObject.SetActive(false);
 
 					CharacterManager.Instance.DealEndOfTurnEffects();
-
-					print("Falta el descarte de cartas extra");
+					CharacterManager.Instance.EndOfTurnStatus();
 
 					HandManager.Instance.CheckDiscardAtEndOfTurn();
 					//Descartar cartas extra
@@ -65,8 +66,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 				break;
 			case TurnPhase.InicioTurnoEnemy:
 				{
-					print("Inicio turno enemigo");
-					print("No esta implementado");
+					EnemyManager.Instance.BeginingOfTurnStatus();
 					m_currentTurnPhase = TurnPhase.ActuandoEnemy;
 				}
 				break;
@@ -78,8 +78,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 				break;
 			case TurnPhase.FinalDeTurnoEnemy:
 				{
-					print("Final del turno del enemigo");
-					print("No esta implementado");
+					EnemyManager.Instance.EndOfTurnStatus();
 					m_currentTurnPhase = TurnPhase.InicioTurnoPlayer;
 					notFirstTurn = true;
 				}

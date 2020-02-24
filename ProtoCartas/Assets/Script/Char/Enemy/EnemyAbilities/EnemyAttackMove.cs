@@ -11,8 +11,6 @@ public class EnemyAttackMove : EnemyAbility
 	{
 		CharacterManager.Instance.Characters[HandManager.Instance.CurrentCharIndex].GetComponent<VidaBase>().DealDamage(m_damage);
 
-		print("Hi biiiiiiiiiiiiiiiiiiiiiiiiitch");
-
 		if (m_movesRight)
 		{
 			HandManager.Instance.ChangeToRightCharByEnemy();

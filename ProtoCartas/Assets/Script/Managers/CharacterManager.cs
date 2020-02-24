@@ -97,6 +97,22 @@ public class CharacterManager : TemporalSingleton<CharacterManager>
 		}
 	}
 
+	public void EndOfTurnStatus()
+	{
+		for (int i = 0; i < m_characters.Count; i++)
+		{
+			m_characters[i].EndOfTurnStatus();
+		}
+	}
+
+	public void BeginingOfTurnStatus()
+	{
+		for (int i = 0; i < m_characters.Count; i++)
+		{
+			m_characters[i].BeginigOfTurnStatus();
+		}
+	}
+
 	public void DealEndOfTurnEffects()
 	{
 		for (int i = 0; i < m_characters.Count; i++)

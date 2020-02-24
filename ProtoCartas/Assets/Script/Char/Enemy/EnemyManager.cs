@@ -12,4 +12,17 @@ public class EnemyManager : TemporalSingleton<EnemyManager>
 	{
 		m_enemy.Activate();
 	}
+
+
+	public void EndOfTurnStatus()
+	{
+		m_enemy.EndOfTurnStatus();
+	}
+
+	public void BeginingOfTurnStatus()
+	{
+		m_enemy.BeginigOfTurnStatus();
+	}
+
+
 }
