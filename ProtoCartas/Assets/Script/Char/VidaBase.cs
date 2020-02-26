@@ -25,7 +25,7 @@ public class VidaBase : MonoBehaviour
 	{
 		if (this.GetComponent<EnemyBehaviour>() != null)
 		{
-
+			m_currentLife = m_currentLife - damage;
 		}
 		else
 		{

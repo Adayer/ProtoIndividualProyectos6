@@ -15,7 +15,7 @@ MonoBehaviour:
   m_deckOfCardsSO:
   - {fileID: 2612457628360733672, guid: e832ce03adef0874facdceb348f3db90, type: 3}
   - {fileID: 2612457628360733672, guid: e832ce03adef0874facdceb348f3db90, type: 3}
-  - {fileID: 2612457628360733672, guid: e832ce03adef0874facdceb348f3db90, type: 3}
-  - {fileID: 2612457628360733672, guid: e832ce03adef0874facdceb348f3db90, type: 3}
+  - {fileID: 2360150837915902694, guid: 6ad70a7395743694f9698e78f2082deb, type: 3}
+  - {fileID: 2360150837915902694, guid: 6ad70a7395743694f9698e78f2082deb, type: 3}
   - {fileID: 2180504995540124060, guid: cfc4ec8ea6405624b9dd292f8161c46e, type: 3}
   - {fileID: 2180504995540124060, guid: cfc4ec8ea6405624b9dd292f8161c46e, type: 3}

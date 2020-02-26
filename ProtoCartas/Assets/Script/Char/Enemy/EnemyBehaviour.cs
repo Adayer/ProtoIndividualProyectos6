@@ -13,6 +13,8 @@ public class EnemyBehaviour : MonoBehaviour
 
 	private StatusComponent m_cmpStatus = null;
 
+	public StatusComponent CmpStatus { get => m_cmpStatus; set => m_cmpStatus = value; }
+
 	public void Start()
 	{
 		m_cmpStatus = this.GetComponent<StatusComponent>();
@@ -26,9 +28,12 @@ public class EnemyBehaviour : MonoBehaviour
 
 			List<EnemyAbility> m_availableAbilities = new List<EnemyAbility>(0);
 
-
 			m_currentNumberOfActionsThisTurn = 0;
 
+			if (m_cmpStatus.CurrentEnemyStatus == EnemyStatus.Wet)
+			{
+				m_currentNumberOfActionsThisTurn++;
+			}
 
 			while (m_numberOfActionsPerTurn > m_currentNumberOfActionsThisTurn)
 			{
@@ -53,11 +58,13 @@ public class EnemyBehaviour : MonoBehaviour
 
 				if(m_cmpStatus.CurrentEnemyStatus == EnemyStatus.Electrified)
 				{
-					this.GetComponent<VidaBase>().DealDamage(1);
+					this.GetComponent<VidaBase>().DealDamage(m_cmpStatus.IsElectrifiedDuration);
 				}
 			}
 		}
 	}
+
+	
 
 	public void EndOfTurnStatus()
 	{

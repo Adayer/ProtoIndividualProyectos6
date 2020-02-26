@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &532872518984086542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7952037960963745352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7365a460362914a8c53c2f852a0653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_manaCost: 1
+  m_manaText: {fileID: 8449310332776981309}
+  m_numberOfTurnsWet: 3
+--- !u!1001 &8705295406403560364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1626991784442480100, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_Name
+      value: Char1-CartaWet Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.54838026
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4087398
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784442480101, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 976884159432851601, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 976884159432851601, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 976884159432851601, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 976884159432851601, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536614342760543367, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.07000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536614342760543367, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.021999955
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211138465366922443, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211138465366922443, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211138465366922443, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211138465366922443, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211138465366922443, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211138465366922443, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_text
+      value: Wet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_text
+      value: Wets the enemy for 3 turns.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626991784411065316, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+        type: 3}
+      propertyPath: m_isTextTruncated
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5855875608946670290, guid: f039d9955df708d4a9b28f6e4a7f1fe8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f039d9955df708d4a9b28f6e4a7f1fe8, type: 3}
+--- !u!1 &7952037960963745352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626991784442480100, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8705295406403560364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8449310332776981309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 976884159432851601, guid: f039d9955df708d4a9b28f6e4a7f1fe8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8705295406403560364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CartaHealElectrify : MonoBehaviour
+public class CartaHealElectrify : CartaBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private int m_numberOfTurnsElectrified = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public override void Effect()
+	{
+		EnemyManager.Instance.Enemy.CmpStatus.Electrify(m_numberOfTurnsElectrified);
+	}
 }
