@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 {
 	[SerializeField] private LayerMask m_cardPlaceLayerMask;
 	[SerializeField] private LayerMask m_cardSelectLayerMask;
+
+	[SerializeField] private GameObject[] m_botones = new GameObject[0];
 
 
 	private CartaBase m_selectedCard = null;
 	private bool m_hasCardSelected = false;
 
 
-    // Update is called once per frame
-    void Update()
-    {
-		if(ManagerTurnos.Instance.CurrentTurnPhase == TurnPhase.ActuandoPlayer)
+	// Update is called once per frame
+	void Update()
+	{
+		if (ManagerTurnos.Instance.CurrentTurnPhase == TurnPhase.ActuandoPlayer)
 		{
 			if (!m_hasCardSelected)
 			{
@@ -32,6 +35,11 @@ public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 								m_selectedCard = hit.collider.GetComponent<CartaBase>();
 								m_selectedCard.CurrentCardState = CardState.Seleccionada;
 								m_hasCardSelected = true;
+
+								for (int i = 0; i < m_botones.Length; i++)
+								{
+									m_botones[i].SetActive(false);
+								}
 							}
 						}
 					}
@@ -63,6 +71,11 @@ public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 							m_selectedCard = null;
 							m_hasCardSelected = false;
 							PositionInHandManager.Instance.FillHolesInHand();
+
+							for (int i = 0; i < m_botones.Length; i++)
+							{
+								m_botones[i].SetActive(true);
+							}
 						}
 						else if (hit.collider.gameObject.layer == CardPlacementeLayers.HandLayer)
 						{
@@ -70,9 +83,30 @@ public class SelectorDeCartas : TemporalSingleton<SelectorDeCartas>
 							PositionInHandManager.Instance.ReturnCardToHand(m_selectedCard.transform);
 							m_selectedCard = null;
 							m_hasCardSelected = false;
+
+							for (int i = 0; i < m_botones.Length; i++)
+							{
+								m_botones[i].SetActive(true);
+							}
 						}
 					}
 				}
+			}
+		}
+	}
+
+	public void ReturnCardToHand()
+	{
+		if (m_hasCardSelected)
+		{
+			m_selectedCard.CurrentCardState = CardState.EnMano;
+			PositionInHandManager.Instance.ReturnCardToHand(m_selectedCard.transform);
+			m_selectedCard = null;
+			m_hasCardSelected = false;
+
+			for (int i = 0; i < m_botones.Length; i++)
+			{
+				m_botones[i].SetActive(true);
 			}
 		}
 	}

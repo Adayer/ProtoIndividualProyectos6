@@ -13,6 +13,8 @@ public class VidaBase : MonoBehaviour
 	[SerializeField] protected TextMeshProUGUI m_lifeTxt = null;
 	[SerializeField] protected Image m_lifeImg = null;
 
+	[SerializeField] private ParticleSystem m_impactParticles = null;
+
 	private void Awake()
 	{
 		m_currentLife = m_maxLife;
@@ -37,6 +39,9 @@ public class VidaBase : MonoBehaviour
 			print("Someone died");
 			m_currentLife = 0;
 		}
+
+		m_impactParticles.Play();
+
 		m_lifeTxt.text = m_currentLife.ToString();
 		m_lifeImg.fillAmount = (float)m_currentLife / (float)m_maxLife;
 	}

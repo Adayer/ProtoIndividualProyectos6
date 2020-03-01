@@ -13,7 +13,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 	[SerializeField] private Image m_timeBar = null;
 
 	bool notFirstTurn = false;
-
+	
 	public TurnPhase CurrentTurnPhase { get => m_currentTurnPhase; set => m_currentTurnPhase = value; }
 
 	void Update()
@@ -34,7 +34,9 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 
 					CharacterManager.Instance.DealStartOfTurnEffects();
 					CharacterManager.Instance.BeginingOfTurnStatus();
-					
+
+					HandManager.Instance.CheckDiscardAtEndOfTurn();
+
 					HandManager.Instance.ResetMana();
 					m_timeBar.transform.parent.gameObject.SetActive(true);
 				}
@@ -56,6 +58,8 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 				{
 					m_timeBar.transform.parent.gameObject.SetActive(false);
 
+					SelectorDeCartas.Instance.ReturnCardToHand();
+
 					CharacterManager.Instance.DealEndOfTurnEffects();
 					CharacterManager.Instance.EndOfTurnStatus();
 
@@ -72,7 +76,7 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 				break;
 			case TurnPhase.ActuandoEnemy:
 				{
-					EnemyManager.Instance.EnemyAct();
+					EnemyManager.Instance.EnemyAct ();
 					m_currentTurnPhase = TurnPhase.FinalDeTurnoEnemy;
 				}
 				break;
@@ -95,5 +99,12 @@ public class ManagerTurnos : TemporalSingleton<ManagerTurnos>
 		{
 			m_currentTurnPhase = TurnPhase.FinalDeTurnoPlayer;
 		}
+	}
+
+	IEnumerator Wait()
+	{
+	    new WaitForSeconds(100);
+
+		yield return null;
 	}
 }
